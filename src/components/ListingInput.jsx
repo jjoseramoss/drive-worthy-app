@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
 
-const ListingInput = () => {
+const ListingInput = ( {handleSubmitOut} ) => {
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
   const [mileage, setMileage] = useState('');
   const [description, setDescription] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = { make, model, year, mileage, description }
+    console.log(data)
+    alert("Submitted!")
+    handleSubmitOut(data);
+  }
+
   return (
     <div className='bg-green-200 p-6 rounded-2xl mt-10 w-full max-w-lg'>
         <h2 className='text-2xl mb-4'>Input your FB Listing</h2>
 
-        <form className='space-y-4'>
+        <form onSubmit={handleSubmit} className='space-y-4'>
 
 
             <div>
