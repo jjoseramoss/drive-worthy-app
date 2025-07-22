@@ -75,6 +75,7 @@ const ListingInput = ( {handleSubmitOut} ) => {
                 <label className='block font-semibold mb-1' htmlFor="description">Description</label>
                 <input 
                 id='description'
+                type='textarea'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)} 
                 className='w-full p-2 rounded border border-gray-300'
