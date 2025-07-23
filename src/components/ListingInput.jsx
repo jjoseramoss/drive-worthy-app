@@ -5,13 +5,23 @@ const ListingInput = ( {handleSubmitOut} ) => {
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
   const [mileage, setMileage] = useState('');
+  const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { make, model, year, mileage, description }
-    console.log(data)
-    alert("Submitted!")
+    const data = { make, model, year, mileage, price, description }
+
+    // clear the form
+    setMake('');
+    setModel('');
+    setYear('');
+    setMileage('');
+    setPrice('');
+    setDescription('');
+
+    // Pass data to parent
     handleSubmitOut(data);
   }
 
@@ -72,8 +82,21 @@ const ListingInput = ( {handleSubmitOut} ) => {
             </div>
 
             <div>
-                <label className='block font-semibold mb-1' htmlFor="description">Description</label>
+                <label className='block font-semibold mb-1' htmlFor="price">Price</label>
                 <input 
+                id='price'
+                type="number"
+                min='0'
+                value={price}
+                onChange={(e) => setPrice(e.target.value)} 
+                className='w-full p-2 rounded border border-gray-300'
+                placeholder='Enter the listing price of the vehicle here...'
+                required/>
+            </div>
+
+            <div>
+                <label className='block font-semibold mb-1' htmlFor="description">Description</label>
+                <textarea 
                 id='description'
                 type='textarea'
                 value={description}
@@ -81,7 +104,8 @@ const ListingInput = ( {handleSubmitOut} ) => {
                 className='w-full p-2 rounded border border-gray-300'
                 rows={5}
                 placeholder='Paste the full description from Facebook Marketplace here...'
-                required/>
+                required>
+                {description}</textarea>
             </div>
 
             <button

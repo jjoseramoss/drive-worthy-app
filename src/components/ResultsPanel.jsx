@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ResultsPanel = ({ make, model, year, mileage, description }) => {
+const ResultsPanel = ({ make, model, year, mileage, price,description }) => {
 
   return (
     <div className='max-w-lg mx-auto p-4 mt-8 bg-white rounded shadow'>
@@ -8,7 +8,8 @@ const ResultsPanel = ({ make, model, year, mileage, description }) => {
         <p><strong>Make:</strong> {make}</p>    
         <p><strong>Model:</strong> {model}</p>    
         <p><strong>Year:</strong> {year}</p>    
-        <p><strong>Mileage:</strong> {mileage}</p>    
+        <p><strong>Mileage:</strong> {mileage}</p>   
+        <p><strong>Price:</strong> ${price}</p> 
         <p><strong>Description:</strong> {description}</p>    
 
     </div>
