@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ResultsPanel = ({ make, model, year, mileage, price,description }) => {
+const ResultsPanel = ({ make, model, year, mileage, price, description }) => {
 
   return (
     <div className='max-w-lg mx-auto p-4 mt-8 bg-white rounded shadow'>
