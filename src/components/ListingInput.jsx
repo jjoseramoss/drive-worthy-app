@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const ListingInput = ( {handleSubmitOut} ) => {
   const [make, setMake] = useState('');
-  const [model, setModel] = useState('');
+  const [carModel, setModel] = useState('');
   const [year, setYear] = useState('');
   const [mileage, setMileage] = useState('');
   const [price, setPrice] = useState('');
@@ -11,7 +11,7 @@ const ListingInput = ( {handleSubmitOut} ) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { make, model, year, mileage, price, description }
+    const data = { make, carModel, year, mileage, price, description }
 
     // clear the form
     setMake('');
@@ -49,7 +49,7 @@ const ListingInput = ( {handleSubmitOut} ) => {
                 <input 
                 id='model'
                 type="text"
-                value={model}
+                value={carModel}
                 onChange={(e) => setModel(e.target.value)} 
                 className='w-full p-2 rounded border border-gray-300'
                 placeholder='e.g. Ranger'

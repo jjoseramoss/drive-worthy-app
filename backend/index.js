@@ -33,15 +33,15 @@ app.get('/', (req, res) => {
 // Define API endpoint for car analysis (POST request)
 app.post('/analyze-car', async (req, res) => {
     try {
-        const { make, car_model, year, mileage, price, description } = req.body;
-        console.log('Recieved car data: ', { make, car_model, year, mileage, price, description });
+        const { make, carModel, year, mileage, price, description } = req.body;
+        console.log('Recieved car data: ', { make, carModel, year, mileage, price, description });
 
-        const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash"});
         const prompt = `Analyze the following used car listing for quality and value. Provide a concise summary, a simple rating (e.g., "Excellent Deal", "Good Value", "Fair Price", "Proceed with Caution"), and a list of key points a buyer should consider.
 
         Car Details:
         Make: ${make}
-        Model: ${model}
+        Model: ${carModel}
         Year: ${year}
         Mileage: ${mileage} miles
         Price: $${price}
